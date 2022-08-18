@@ -1,0 +1,5 @@
+in.csv <- read.csv("/media/edrive1/Shashank/shashank_Mount/csv/1615.csv")
+in.csv$Date <- as.Date(in.csv$Date,"%Y-%m-%d")
+year <- format(in.csv$Date,"%Y")
+month <- format(in.csv$Date, "%m")
+rainfall<- aggregate(in.csv$Rainfall, by = list(month, year ), FUN= mean)
